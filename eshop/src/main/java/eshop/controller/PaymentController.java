@@ -88,10 +88,20 @@ public class PaymentController
 	  orderDAO.paymentProcess(order);
 	  orderDAO.updateCartItems(username, grandTotal);
 	  
+	  if(orderDAO.updateCartItems("address", order.getOrderId()))
+	  {
 	  m.addAttribute("orderinfo", order);
-	  m.addAttribute("address", userDAO.getUserDetail(username));
+	  m.addAttribute("address", userDAO.getUserDetail(username).getAddress());
 	  
 	  return "Receipt";	
+}
+	  else
+	  {
+		  System.out.println("Not Completed");
+		  return "Cart";
+		  
+	  }
+	  
 }
   public int calcGrandTotal (List<CartItem> listCartItems)
   {
