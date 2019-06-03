@@ -1,73 +1,79 @@
-<%@ include file="Header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<%@include file="Header.jsp"%>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
+  }
+  </style>
+</head>
+<body background="resources/images/bg1.jpg">
+
 <div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
 
-<form:form action="InsertProduct" modelAttribute="product" method="post">"
-<table align="center">
-<tr>
-<td colspan="2">Product Management </td>
-</tr>
-<tr>
-<td>Product Name</td>
-<td><form:input path="productName"/></td>
-</tr>
-<tr>
-<td>Product Desc</td>
-<td><form:input path="productDesc"/></td>
-</tr>
-<tr>
-<td>Stock</td>
-<td><form:input path="stock"/></td>
-</tr>
-<tr>
-<td>Price</td>
-<td><form:input path="price"/></td>
-</tr>
-<tr>
-<td>Category </td>
-<td>
-<form:select path="categoryId">
-</form:select>
-</td>
-</tr>
-<tr>
-<td>Supplier</td>
-<td><form:input path="supplierId"/></td>
-</tr>
-<tr>
-<td>Product Image</td>
-<td><form:input type="file" path="pimage"/></td>
-</tr>
-<tr>
-<td colspan="2">
-<input type="submit" value="Insert Product"/>
-</td>
-</tr>
-</form:form>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
-<br></br>
+      <div class="item active">
+      <img src='<c:url value='/resources/images/b1.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <div class="carousel-caption">
+       
+        </div>
+      </div>
 
-<table align="center">
-<tr bgcolor="blue">
-     <td>Product Name</td>
-     <td>Stock</td>
-     <td>Price</td>
-     <td>Category</td>
-     <td>Supplier</td>
-     <td></td>
-     </tr>
-     <c:forEach items="$(productList)" var="product">
-   <tr> 
-     <td>$(product.productName)</td>
-     <td>$(product.stock)</td>
-     <td>$(product.price)</td>
-     <td>$(product.catgoryId)</td>
-     <td>$(product.supplierId)</td>
-     <td>
-    <a href="<c:url value="/editCategory/categoryId"/>">Edit</a>
-    <a href="<c:url value="/deleteCategory/categoryId"/>">Delete</a>
-    </td>
-    </tr> 
-    </c:forEach>
-    </table>
+      <div class="item">
+       <img src='<c:url value='/resources/images/b2.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+    
+      <div class="item">
+       <img src='<c:url value='/resources/images/b3.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <div class="carousel-caption">
+        </div>
+      </div>
 
+      <div class="item">
+        <img src='<c:url value='/resources/images/4.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <div class="carousel-caption">
+ 
+        </div>
+        
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
+
+</body>
+</html>
