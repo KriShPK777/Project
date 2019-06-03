@@ -49,7 +49,7 @@ public class ProductDAOTest
     {
     	@SuppressWarnings("rawtypes")
 		Product product=productDAO.getProduct(2);
-    	assertTrue("problem in Deleting Category",ProductDAO.deleteProduct(product));
+    	assertTrue("problem in Deleting Category",productDAO.deleteProduct(product));
     }
     
     @Ignore
