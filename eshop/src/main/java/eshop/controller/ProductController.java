@@ -66,7 +66,7 @@ public class ProductController
     	 @SuppressWarnings("rawtypes")
 		Product product=productDAO.getProduct(productId);
     	 
-    	 ProductDAO.deleteProduct(product);
+    	 productDAO.deleteProduct(product);
     		Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+id+".png");
     		if(Files.exists(path))
     		{
