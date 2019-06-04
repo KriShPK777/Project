@@ -23,10 +23,10 @@ public void registerCustomer(Customer customer)
 {
 	Session session=sessionFactory.getCurrentSession();
 	  customer.getUser().setEnabled(true);	   
-	   System.out.println(customer.getUser().getAuthorities());
+	  // System.out.println(customer.getUser().getAuthorities());
 	   Authorities authorities=new Authorities();
 	   authorities.setRole("ROLE_USER");
-	   customer.getUser().setAuthorities(authorities);
+	   //customer.getUser().setAuthorities(authorities);
 	   authorities.setUser(customer.getUser());
 	   session.save(customer);
 	
