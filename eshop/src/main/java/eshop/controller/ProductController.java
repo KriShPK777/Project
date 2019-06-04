@@ -43,7 +43,7 @@ public class ProductController
      @RequestMapping(value="/all/getallproducts")
      public String getAllProducts(Model model)
      {
-    	 @SuppressWarnings("rawtypes")
+  
 		List<Product> products=productDAO.getProductList();
     	 model.addAttribute("productsList",products);
     	 return "listofproducts";
@@ -53,7 +53,7 @@ public class ProductController
      @RequestMapping(value="/all/getproduct/{id}")
      public String getProduct(@PathVariable int id,Model model)
      {
-    	 @SuppressWarnings("rawtypes")
+    	
 		Product product=productDAO.getProduct(id);
     		model.addAttribute("productObj",product);
     		return "viewproduct";
@@ -63,7 +63,7 @@ public class ProductController
      @RequestMapping(value="/deleteproduct/{productid}")
      public String deleteProduct(@PathVariable int id,Model model,HttpServletRequest request, int productId)
      {
-    	 @SuppressWarnings("rawtypes")
+    	 
 		Product product=productDAO.getProduct(productId);
     	 
     	 productDAO.deleteProduct(product);
@@ -89,7 +89,7 @@ public class ProductController
      public String getproductform(Model model)
      {
     	 
-    	 @SuppressWarnings("rawtypes")
+    	
 		Product p=new Product();
          model.addAttribute("product",p);
          model.addAttribute("categories",productDAO.getProductList());
@@ -99,7 +99,7 @@ public class ProductController
      }
      
      @RequestMapping(value="/admin/addproduct")
-     public String addProduct(@SuppressWarnings("rawtypes") @Validated @ModelAttribute(name="product") Product product,BindingResult result,Model model ,HttpServletRequest request)
+     public String addProduct(@Validated @ModelAttribute(name="product") Product product,BindingResult result,Model model ,HttpServletRequest request)
      {
     	 if(result.hasErrors())
     	 {
@@ -112,7 +112,8 @@ public class ProductController
     		Object img=product.getImage();
     		System.out.println(request.getServletContext().getRealPath("/"));
     		Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getImage()+".png");
-    		if(!((MultipartFile) img).isEmpty()&&img!=null){
+    		if(!((MultipartFile) img).isEmpty()&&img!=null)
+    		{
     			try 
     			{
     				((MultipartFile) img).transferTo(new File(path.toString()));
@@ -138,7 +139,7 @@ public class ProductController
      public String getUpdateProductForm(@PathVariable int id,Model model)
      {
      
-     	@SuppressWarnings("rawtypes")
+     	
 		Product product=productDAO.getProduct(id);
      	model.addAttribute("product",product);
      	model.addAttribute("categories",productDAO.getProductList());
@@ -146,10 +147,11 @@ public class ProductController
      }
      
      @RequestMapping(value="/admin/updateproduct")
-     public String updateProduct(@SuppressWarnings("rawtypes") @Validated @ModelAttribute Product product,BindingResult result,Model model,HttpServletRequest request)
+     public String updateProduct(@Validated @ModelAttribute Product product,BindingResult result,Model model,HttpServletRequest request)
      {
     	 
-    	 if(result.hasErrors()){
+    	 if(result.hasErrors())
+    	 {
     		   model.addAttribute("categories",productDAO.getProductList());
     		   return "updateproductform";
    	 
@@ -159,7 +161,8 @@ public class ProductController
     	MultipartFile img=(MultipartFile) product.getImage();
     	System.out.println(request.getServletContext().getRealPath("/"));
     	Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getImage()+".png");
-    	if(!img.isEmpty()&&img!=null){
+    	if(!img.isEmpty()&&img!=null)
+    	{
     		try 
     		{
     			img.transferTo(new File(path.toString()));
@@ -179,7 +182,8 @@ public class ProductController
     }
     	 
      @RequestMapping(value="/all/searchByCategory")
-     public String searchByCategory(@RequestParam String searchCondition ,Model model){
+     public String searchByCategory(@RequestParam String searchCondition ,Model model)
+     {
      	if(searchCondition.equals("All"))
      		model.addAttribute("searchCondition","");
      	else

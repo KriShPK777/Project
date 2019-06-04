@@ -30,7 +30,6 @@ public class CategoryController
       
     }
     
-    @SuppressWarnings("static-access")
 	@RequestMapping(value="/InsertCategory",method=RequestMethod.POST)
     public String insertCategory(@RequestParam("categoryName")String categoryName, @RequestParam("categoryDesc")String categoryDesc,Model m)
     {
@@ -66,12 +65,11 @@ public class CategoryController
     	
     	 List<Category> categoryList=categoryDAO.listCategories();
     	 m.addAttribute("categoryList",categoryList);
-		return "Category";
+		 return "Category";
 
 		
     }
-    
-    @SuppressWarnings("static-access")
+   
 	@RequestMapping(value="/updateCategory/(categoryId)",method=RequestMethod.POST)
     public String updateCategory(@PathVariable("catgeoryId")int categoryId, Model m)
     {
