@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table
@@ -20,6 +21,9 @@ public class Product<MultipartFile>
 	int price;
 	int categoryId;
 	int supplierId;
+	
+	@Transient
+	MultipartFile pimage;
 	
 	public int getProductId() {
 		return productId;
