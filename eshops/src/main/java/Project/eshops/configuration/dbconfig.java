@@ -10,9 +10,14 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import Project.eshops.Model.Category;
+import Project.eshops.Model.CartItem;
+import Project.eshops.Model.Product;
+import Project.eshops.Model.UserDetail;
+
 @org.springframework.context.annotation.Configuration
 @EnableTransactionManagement
-@ComponentScan("Project")
+@ComponentScan("Project.eshops")
 
 public class dbconfig 
 {
@@ -41,6 +46,13 @@ public class dbconfig
 		DriverManagerDataSource dataSource=this.getH2DataSource();
 		LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(dataSource);
 		factory.addProperties(properties);
+		
+		factory.addAnnotatedClass(Category.class);
+		factory.addAnnotatedClass(Product.class);
+		factory.addAnnotatedClass(UserDetail.class);
+		factory.addAnnotatedClass(CartItem.class);
+	
+		
 		
 		System.out.println("---Session Factory Object is Created---");
 		SessionFactory sessionFactory=factory.buildSessionFactory();
