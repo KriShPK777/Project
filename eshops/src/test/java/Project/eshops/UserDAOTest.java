@@ -25,7 +25,6 @@ public class UserDAOTest
 	  
   }
 
- @Ignore
  @Test
  public void adduserTest()
  {
