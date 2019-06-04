@@ -17,7 +17,7 @@ public class UserDAOTest
   @BeforeClass
   public static void executeFirst()
   {
-	  @SuppressWarnings("resource")
+	 
 	AnnotationConfigApplicationContext context=new  AnnotationConfigApplicationContext();
 	  context.scan("Project.eshops");
   	  context.refresh();

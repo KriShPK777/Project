@@ -20,7 +20,7 @@ public class ProductDAOTest
     public static void executeFirst()
     {
       
-    	@SuppressWarnings("resource")
+    
 		AnnotationConfigApplicationContext context=new  AnnotationConfigApplicationContext();
     	context.scan("Project.eshops");
     	context.refresh();
@@ -32,7 +32,7 @@ public class ProductDAOTest
     @Test
     public void addProductTest()
     {
-    	@SuppressWarnings("rawtypes")
+    	
 		Product product=new Product();
     	product.setProductname("Raymond Formal");
     	product.setProductDesc("Formal shirt with neck with excellent colour");
@@ -47,7 +47,7 @@ public class ProductDAOTest
     @Test
     public void deleteProductTest()
     {
-    	@SuppressWarnings("rawtypes")
+    
 		Product product=productDAO.getProduct(2);
     	assertTrue("problem in Deleting Category",productDAO.deleteProduct(product));
     }
@@ -56,7 +56,7 @@ public class ProductDAOTest
     @Test
     public void updateProductTest()
     {
-    	@SuppressWarnings("rawtypes")
+    
 		List<Product> productList=productDAO.getProductList();
     	
     	assertTrue("problem in Listing Products",productList.size()>0);
