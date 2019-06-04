@@ -16,13 +16,13 @@ String address;
 boolean enabled;
 String emailId;
 String role;
-Authorities authorities;
-public Authorities getAuthorities() {
-	return authorities;
-}
-public void setAuthorities(Authorities authorities) {
-	this.authorities = authorities;
-}
+//Authorities authorities;
+//public Authorities getAuthorities() {
+	//return authorities;
+//}
+//public void setAuthorities(Authorities authorities) {
+	//this.authorities = authorities;
+//}
 public String getUsername() {
 	return username;
 }
