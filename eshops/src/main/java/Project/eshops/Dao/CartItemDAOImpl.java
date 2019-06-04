@@ -80,7 +80,6 @@ public class CartItemDAOImpl implements CartItemDAO
 		Session session=sessionFactory.getCurrentSession();
 		Query query=session.createQuery("from CartItem");
 		query.setString(0,username);
-		@SuppressWarnings("unchecked")
 		List<CartItem> listcartItems=query.list();
 		return listcartItems;
 	

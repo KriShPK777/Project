@@ -77,7 +77,6 @@ public class SupplierDAOImpl implements SupplierDAO
 	public List<Category> listCategories() 
 	{
 		Session session=sessionFactory.openSession();
-		@SuppressWarnings("unchecked")
 		List<Category>ListCategory=(List<Category>)session.createQuery("from Category").list();
     	session.close();
     	return ListCategory;

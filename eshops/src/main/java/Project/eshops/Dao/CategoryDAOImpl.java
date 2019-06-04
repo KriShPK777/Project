@@ -22,7 +22,6 @@ public abstract class CategoryDAOImpl implements CategoryDAO
     public List<Category> ListCategories()
     {
     	Session session=sessionFactory.openSession();
-		@SuppressWarnings("unchecked")
 		List<Category>ListCategory=(List<Category>)session.createQuery("from Category").list();
     	session.close();
     	return ListCategory;

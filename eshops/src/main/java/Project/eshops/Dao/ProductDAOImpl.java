@@ -21,7 +21,7 @@ public class ProductDAOImpl implements ProductDAO
 	SessionFactory sessionFactory;
 	
 	@Override
-	public boolean addProduct(@SuppressWarnings("rawtypes") Product product) 
+	public boolean addProduct(Product product) 
 	{
 		try
 		{
