@@ -25,7 +25,7 @@ public class CategoryDAOTest
 	   
 	   categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
      }
-	@Ignore
+	//@Ignore
 	@Test
 	public void addCategoryTest()
 	{
@@ -36,6 +36,7 @@ public class CategoryDAOTest
 		assertTrue("problem in Adding Category",categoryDAO.addcategory(category));
 		
 	}
+	@Ignore
 	@Test
 	public void deleteCategoryTest()
 	{
