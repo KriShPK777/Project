@@ -25,6 +25,12 @@ public class Product<MultipartFile>
 	@Transient
 	MultipartFile pimage;
 	
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
+	}
 	public int getProductId() {
 		return productId;
 	}
