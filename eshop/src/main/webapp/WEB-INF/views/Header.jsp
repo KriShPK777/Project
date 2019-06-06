@@ -30,7 +30,6 @@
   <li><a href="register"><b>Register</b></a></li>
   
    <li><a href="AboutUs"><b>AboutUs</b></a></li>
-  <li><a href="ContactUs"><b>ContactUs</b></a></li>
      </ul>
 </c:if>
 <c:if test="${sessionScope.loggedIn}">
@@ -38,10 +37,6 @@
    <ul class="nav navbar-nav">
       <li>
 <a href="category">Category</a></li>
-   
-   <li>
-   <li>
-<a href="supplier">Supplier</a></li>
    
    <li>
 <a href="product">Product</a></li>

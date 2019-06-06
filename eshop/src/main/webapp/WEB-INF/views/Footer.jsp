@@ -12,7 +12,7 @@
 </head>
 <body>
 <footer>     
-<li class="glyphicon glyphicon-map-marker" style="width:30px"></li>20, Watch Shop,Chennai-49 <br>
+<li class="glyphicon glyphicon-map-marker" style="width:30px"></li>40,Watch Shop,Chennai-49 <br>
 <li class="glyphicon glyphicon-phone" style="width:30px"></li> Phone: +91 8939499494<br>
 <li class="glyphicon glyphicon-envelope" style="width:30px"> </li> Email: krishnalosblancos787@gmail.com<br> 
 </footer>

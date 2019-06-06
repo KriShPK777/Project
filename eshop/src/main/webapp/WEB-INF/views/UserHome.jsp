@@ -34,27 +34,27 @@
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-      <img src='<c:url value='/resources/images/p1.jpg'></c:url>' alt= "Mobiles" height="450" width="350" > 
+      <img src='<c:url value='/resources/images/p1.jpg'></c:url>' alt= "Watches" height="450" width="350" > 
         <div class="carousel-caption">
        
         </div>
       </div>
 
       <div class="item">
-       <img src='<c:url value='/resources/images/p2.jpg'></c:url>' alt= "Mobiles" height="450" width="350" > 
+       <img src='<c:url value='/resources/images/p2.jpg'></c:url>' alt= "Watches" height="450" width="350" > 
         <div class="carousel-caption">
         
         </div>
       </div>
     
       <div class="item">
-       <img src='<c:url value='/resources/images/p3.jpg'></c:url>' alt= "Mobiles" height="450" width="350" > 
+       <img src='<c:url value='/resources/images/p3.jpg'></c:url>' alt= "Watches" height="450" width="350" > 
         <div class="carousel-caption">
         </div>
       </div>
 
       <div class="item">
-        <img src='<c:url value='/resources/images/p4.jpg'></c:url>' alt= "Mobiles" height="450" width="350" > 
+        <img src='<c:url value='/resources/images/p4.jpg'></c:url>' alt= "Watches" height="450" width="350" > 
         <div class="carousel-caption">
  
         </div>
