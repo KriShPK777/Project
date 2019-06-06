@@ -20,7 +20,7 @@
 <tr>
     <td rowspan="7">
   
-   <img src ='<c:url value='/resources/images/${product.productid}.jpg'></c:url>' height="70" width="70" alt="Generic placeholder thumbnal"> 
+   <img src ='<c:url value='/resources/images/${product.productid}.jpg'></c:url>' height="70" width="70" alt="Generic placeholder thumbnail"> 
     
     
     </td>
