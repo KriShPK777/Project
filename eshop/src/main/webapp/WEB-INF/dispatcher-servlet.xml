@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
@@ -15,7 +13,7 @@
 <mvc:annotation-driven></mvc:annotation-driven>
 
 <!-- Context - ApplicationContext (spring container) -->
-<context:component-scan base-package="Project.eshops"></context:component-scan>
+<context:component-scan base-package="com.niit"></context:component-scan>
 
 <!-- home -> /WEB-INF/views/home.jsp -->
 <!--  Bean to convert logical view name into an actual view name -->
@@ -25,10 +23,8 @@
 </bean>
 
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-<property name="maxUploadSize" value="100000"/>
 
 </bean>
-
 
 <!-- path for static resources [images, css, js] -->
 <!-- mapping static resources path -->
@@ -41,6 +37,13 @@
 
 <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>
 </beans>
+
+
+
+
+ 
+
+
 
 
 
