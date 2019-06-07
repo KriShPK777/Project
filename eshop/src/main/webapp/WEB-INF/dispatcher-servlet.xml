@@ -8,43 +8,43 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-       
-       <!-- To enable spring web mvc  -->
-       <mvc:annotation-driven>
-       
-       <mvc:argument-resolvers>
-       <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver">
-       
-       </bean>
-       
-       
-       </mvc:argument-resolvers>
-       
-       
-       
-       </mvc:annotation-driven>
-       
-       <!--  to scan all the classes annotated with @Controller, @Service, @Repository, @Autowired -->
-       <!--  similar @Component-scan(basePackages="mer.mano" -->
-       <context:component-scan base-package="mer.mano"></context:component-scan>
-       
-       <!--  to convert logical view name to actual view name -->
-       <!-- logical view name is 'home' -->
-       <!-- /WEB-INF/views/home.jsp -->
-       <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-       <property name="prefix" value="/WEB-INF/views/"></property>
-       <property name="suffix" value=".jsp"></property>
-       </bean>
-       
-       <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="10240000"></property>
-		</bean>
-		
-       <!--  /resources/images/ast.jpg -->
-       <!--  /WEB-INF/resources/images/ast.jpg -->
-       <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>
-       </beans>
-       
+
+<!-- MVC -->
+<mvc:annotation-driven></mvc:annotation-driven>
+
+<!-- Context - ApplicationContext (spring container) -->
+<context:component-scan base-package="com.niit"></context:component-scan>
+
+<!-- home -> /WEB-INF/views/home.jsp -->
+<!--  Bean to convert logical view name into an actual view name -->
+<bean  id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/views/"></property>
+<property name="suffix" value=".jsp"></property>
+</bean>
+
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+</bean>
+
+<!-- path for static resources [images, css, js] -->
+<!-- mapping static resources path -->
+<!--  for loading image -->
+<!--  image will be located in WEB-INF/resources/images/1.jpg -->
+<!-- <img src="/resources/images/1.jpg" -->
+<!--  load a css file -->
+<!-- css will be located in WEB-INF/resources/css/table.css  -->
+<!-- <link href='/resources/css/table.css' -->
+
+
+
+
+<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>
+</beans>
+
+
+
+
+ 
 
 
 
