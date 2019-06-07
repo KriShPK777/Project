@@ -99,7 +99,7 @@ public class ProductController
      }
      
      @RequestMapping(value="/admin/addproduct")
-     public String addProduct(@Validated @ModelAttribute(name="product") Product product,BindingResult result,Model model ,HttpServletRequest request)
+     public String addProduct(@Validated @ModelAttribute(value="product") Product product,BindingResult result,Model model ,HttpServletRequest request)
      {
     	 if(result.hasErrors())
     	 {
