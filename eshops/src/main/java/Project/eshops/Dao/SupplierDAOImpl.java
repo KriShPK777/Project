@@ -22,7 +22,7 @@ public class SupplierDAOImpl implements SupplierDAO
     SessionFactory sessionFactory;
     
 	@Override
-	public boolean addcategory(Project.eshops.Model.Supplier supplier) 
+	public boolean addSupplier(Project.eshops.Model.Supplier supplier) 
 	{
 		try 
 		{
@@ -36,7 +36,7 @@ public class SupplierDAOImpl implements SupplierDAO
 
 	}		
 	@Override
-	public boolean deletecategory(Project.eshops.Model.Supplier supplier) 
+	public boolean deleteSupplier(Project.eshops.Model.Supplier supplier) 
 	{
 		try
 		{
@@ -51,7 +51,7 @@ public class SupplierDAOImpl implements SupplierDAO
 
 	}		
 	@Override
-	public boolean updatecategory(Project.eshops.Model.Supplier supplier) 
+	public boolean updateSupplier(Project.eshops.Model.Supplier supplier) 
 	{
 		try
 		{
@@ -73,22 +73,14 @@ public class SupplierDAOImpl implements SupplierDAO
 		return supplier;
 	}
 
+
 	@Override
-	public List<Category> listCategories() 
-	{
+	public List<Supplier> listSuppliers() 
+	{ 
 		Session session=sessionFactory.openSession();
 		List<Category>ListCategory=(List<Category>)session.createQuery("from Category").list();
     	session.close();
-    	return ListCategory;
-		
-	}
-	@Override
-	public Category getCategory(int supplierId) 
-	{
-		Session session=sessionFactory.openSession();
-	    Category supplier=(Category) session.get(Supplier.class,supplierId);
-	    session.close();
-		return supplier;
+    	return listSuppliers();
 		
 	}
 
