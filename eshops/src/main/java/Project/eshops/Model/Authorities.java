@@ -14,7 +14,15 @@ public class Authorities
 	@Id
 	@GeneratedValue
 	int id;
+	String emailId;
 	String role;
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	
 	public int getId() {
 		return id;
 	}
