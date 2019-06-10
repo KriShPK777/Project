@@ -66,7 +66,6 @@ public class ProductDAOImpl implements ProductDAO
 	{
 		Session session=sessionFactory.openSession();
 		Query query=(Query) session.createQuery("from Product");
-		@SuppressWarnings("unchecked")
 		List<Product> productList=((org.hibernate.Query) query).list();
 		session.close();
 		return productList;
@@ -79,7 +78,6 @@ public class ProductDAOImpl implements ProductDAO
 		Session session=sessionFactory.openSession();
 		Query query=(Query) session.createQuery("from Product where categoryId=catId");
 		query.setParameter("catId", categoryId);
-		@SuppressWarnings("unchecked")
 		List<Product> productList=((org.hibernate.Query) query).list();
 		session.close();
 		return productList;
